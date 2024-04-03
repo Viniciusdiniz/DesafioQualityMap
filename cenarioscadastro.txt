@@ -1,0 +1,153 @@
+Funcionalidade: Cadastro 
+
+Cenário 1 OK
+DADO QUE estou na tela home do sistema 
+E clico no menu Register 
+QUANDO carregar a requisição 
+ENTÃO devo ser direcionado a tela de Cadastro 
+
+Cenário 2 OK 
+DADO QUE estou na tela de cadastro 
+E não preencho nenhum campo
+QUANDO clico no botão Register
+ENTÃO deve ser emitido uma mensagem de erro nos campos: First name, Last name, Email, Password e Confirm password 
+
+Cenário 3 OK 
+DADO QUE estou na tela de cadastro
+E preencho todos os campos corretamente
+QUANDO clico no botão Register
+ENTÃO o cadastro deve ser realizado com sucesso 
+
+Cenário 4 OK
+DADO QUE estou na tela de cadastro
+E preencho os campos obrigatórios
+QUANDO clico no botão Register
+ENTÃO o cadastro deve ser realizado com sucesso 
+
+Cenário 5 OK 
+DADO QUE estou na tela de cadastro
+QUANDO preencher o formulário de registro com as informações obrigatórias
+E preencho o campo Gender
+E eu clicar no botão Register
+ENTÃO o cadastro deve ser realizado com sucesso
+
+Cenário 6 OK 
+DADO QUE estou na tela de cadastro
+E preencho somente o campo "First name"
+QUANDO clico no botão Register
+ENTÃO deve ser emitido uma mensagem de erro nos campos: Last name, Email, Password e Confirm password 
+
+Cenário 7 OK
+DADO QUE estou na tela de cadastro
+E preencho somente os campos: First name e Last name
+QUANDO clico no botão Register
+ENTÃO deve ser emitido uma mensagem de erro nos campos: Email, Password e Confirm password 
+
+Cenário 8 OK
+DADO QUE estou na tela de cadastro
+E preencher o formulário de registro com as informações obrigatórias
+E preencho o campo Date of Birth
+QUANDO eu clicar no botão Register
+ENTÃO o cadastro deve ser realizado com sucesso
+
+Cenário 9 OK
+DADO QUE estou na tela de cadastro
+E preencho somente os campos: First name, Last name e Email válido
+QUANDO clico no botão Register
+ENTÃO deve ser emitido uma mensagem de erro nos campos: Password e Confirm password 
+
+Cenário 10 OK
+DADO QUE estou na tela de cadastro
+QUANDO preencher o formulário de registro com as informações obrigatórias
+E preencho o campo company details
+E eu clicar no botão Register
+ENTÃO o cadastro deve ser realizado com sucesso
+
+Cenário 11 OK
+DADO QUE estou na tela de cadastro
+QUANDO preencher o formulário de registro com as informações obrigatórias
+E desmarco a opção newsletter
+E eu clicar no botão Register
+ENTÃO o cadastro deve ser realizado com sucesso
+
+Cenário 12 OK
+DADO QUE estou na tela de cadastro
+QUANDO preencher o formulário de registro com as informações obrigatórias
+E preenchos os campos Gender, Company Details
+E eu clicar no botão Register
+ENTÃO o cadastro deve ser realizado com sucesso
+
+Cenário 13 OK
+DADO QUE estou na tela de cadastro
+QUANDO preencher o formulário de registro com as informações obrigatórias
+E preencho os campos Gender, Date of birth
+E eu clicar no botão Register
+ENTÃO o cadastro deve ser realizado com sucesso 
+
+Cenário 14 OK
+DADO QUE estou na tela de cadastro
+QUANDO preencher o formulário de registro com as informações obrigatórias
+E preencho os campos Gender, Company Details
+E eu clicar no botão Register
+ENTÃO o cadastro deve ser realizado com sucesso 
+
+Cenário 15 OK
+DADO QUE estou na tela de cadastro
+QUANDO preencher o formulário de registro com as informações obrigatórias
+E preencho o campo Gender, desmarco Newsletter
+E eu clicar no botão Register
+ENTÃO o cadastro deve ser realizado com sucesso
+
+Cenário 16 OK
+DADO QUE estou na tela de cadastro
+E preencho somente os campos: First name, Last name, Email válido, Password válido
+QUANDO clico no botão Register
+ENTÃO deve ser emitido uma mensagem de erro no campo: Confirm password 
+
+Cenário 17 OK
+DADO QUE estou na tela de cadastro
+E preencho todos os campos
+QUANDO preencho o campo email de forma inválida: aaaa
+ENTÃO deve ser emitido uma mensagem de erro no campo: Email
+
+Cenário 18 OK
+DADO QUE estou na tela de cadastro
+E preencho todos os campos
+QUANDO preencho o campo email de forma inválida: aaaa@, 
+ENTÃO deve ser emitido uma mensagem de erro no campo: Email  
+
+Cenário 19 OK
+DADO QUE estou na tela de cadastro
+E preencho todos os campos
+QUANDO preencho o campo email de forma inválida: @aaaa,
+ENTÃO deve ser emitido uma mensagem de erro no campo: Email
+
+Cenário 20 TESTADO OBS: Só emite mensagem após clicar em Register
+DADO QUE estou na tela de cadastro
+E preencho todos os campos
+QUANDO preencho o campo email de forma inválida: aaaa@aaaa
+ENTÃO deve ser emitido uma mensagem de erro no campo: Email
+
+Cenário 21 OK
+DADO QUE estou na tela de cadastro
+E preencho todos os campos
+QUANDO preencho o campo email de forma inválida: @
+ENTÃO deve ser emitido uma mensagem de erro no campo: Email
+
+Cenário 22 OK
+DADO QUE estou na tela de cadastro
+E preencho todos os campos
+QUANDO preencho o campo email de forma inválida: aaaa@aaaa.
+ENTÃO deve ser emitido uma mensagem de erro no campo: Email
+
+Cenário 23 OK
+DADO QUE estou na tela de cadastro
+E preencho todos os campos
+QUANDO preencho o campo password de forma inválida: menos de 6 caracteres 
+ENTÃO deve ser emitido uma mensagem de erro no campo: password
+
+Cenário 24 OK
+DADO QUE estou na tela de cadastro
+E preencho todos os campos
+QUANDO preencho o campo Confirm password de forma inválida: diferente do password
+ENTÃO deve ser emitido uma mensagem de erro no campo: Confirm password

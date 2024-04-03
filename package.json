@@ -1,0 +1,23 @@
+{
+  "name": "desafio_qualitymap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test-api": "npx playwright test apiTests",
+    "test-web": "npx playwright test cadastro",
+    "report": "npx playwright show-report"
+    
+  },
+  "author": "Elvio Diniz",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.42.1",
+    "@types/node": "^20.12.2",
+    "javascript": "^1.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
