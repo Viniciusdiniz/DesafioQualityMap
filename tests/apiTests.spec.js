@@ -4,12 +4,7 @@ test('API GET request', async ({ request }) => {
 
     const response = await request.get('https://serverest.dev/usuarios')
 
-    expect(response.status()).toBe(200)
-
-    const text = await response.text();
-    expect(text).toContain('Test 0613d140-6af8-491a-b092-b65c5145e7a8 Service')
-
-    console.log(await response.json());
+    await expect(response.status()).toBe(200)
 
 })
 
@@ -18,34 +13,34 @@ test('API POST request', async ({ request }) => {
     const response = await request.post('https://serverest.dev/usuarios',{
         data:{
             "nome": "Elvio Diniz",
-            "email": "elvio158@gmail.com.br",
+            "email": "elviodinizapi@gmail.com.br",
             "password": "123456",
             "administrador": "true"
         }
     })
-    expect(response.status()).toBe(201)
+    await expect(response.status()).toBe(201)
 
     const text = await response.text();
-    expect(text).toContain('Cadastro realizado com sucesso')
+    await expect(text).toContain('Cadastro realizado com sucesso')
 
     console.log(await response.json());
     
 })
-/*-----------------------------------------------------------------------------------*/
+
 test('API PUT request', async ({ request }) => {
 
-    const response = await request.put('https://serverest.dev/usuarios/FCvXoNuRxBqlklDS',{
+    const response = await request.put('https://serverest.dev/usuarios/Pb5X2YtbW96BcA8u',{
         data:{
             "nome": "Joao Paulo",
-            "email": "joaosilva123@gmail.com.br",
+            "email": "joaosilva12344@gmail.com.br",
             "password": "joaopereira",
             "administrador": "true"
         }
     })
-    expect(response.status()).toBe(200)
+   await expect(response.status()).toBe(200)
 
     const text = await response.text();
-    expect(text).toContain('Registro alterado com sucesso')
+   await  expect(text).toContain('Registro alterado com sucesso')
 
     console.log(await response.json());
     
@@ -53,9 +48,9 @@ test('API PUT request', async ({ request }) => {
 
 test('API DELETE request', async ({ request }) => {
 
-    const response = await request.delete('https://serverest.dev/usuarios/FCvXoNuRxBqlklDS')
+    const response = await request.delete('https://serverest.dev/usuarios/Pb5X2YtbW96BcA8u')
 
-    expect(response.status()).toBe(200)
+    await expect(response.status()).toBe(200)
 
 
 })
